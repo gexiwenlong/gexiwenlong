@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Scaling</title>
+  <style>
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="file" id="imageInput" accept="image/*">
+  <input type="number" id="scaleRatio" placeholder="Enter scale ratio">
+  <button onclick="scaleImage()">Scale Image</button>
+  <div id="imageContainer"></div>
+
+  <script>
+    function scaleImage() {
+      const input = document.getElementById('imageInput');
+      const ratioInput = document.getElementById('scaleRatio');
+      const container = document.getElementById('imageContainer');
+      if (input.files.length === 0) {
+        alert('Please select an image first');
+        return;
+      }
+      const ratio = parseFloat(ratioInput.value);
+      if (isNaN(ratio) || ratio <= 0) {
+        alert('Please enter a valid positive scale ratio');
+        return;
+      }
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const img = new Image();
+        img.src = e.target.result;
+        img.onload = function () {
+          const width = img.width * ratio;
+          const height = img.height * ratio;
+          img.width = width;
+          img.height = height;
+          container.innerHTML = '';
+          container.appendChild(img);
+        };
+      };
+      reader.readAsDataURL(file);
+    }
+  </script>
+</body>
+
+</html>
