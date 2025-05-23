@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans - serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+#originalImage {
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+#processedImage {
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+input[type="file"] {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+}
+input[type="number"] {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 60px;
+  text-align: center;
+}
+button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}

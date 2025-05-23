@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Transformation with Bilinear/Trilinear Filtering</title>
+    <link rel="stylesheet" href="number8.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Transformation</h1>
+        <p>Select an image, then click 3 points on the original and 3 points on the target area</p >
+        
+        <div class="upload-container">
+            <input type="file" id="imageInput" accept="image/*">
+        </div>
+        
+        <div class="canvas-container">
+            <div class="canvas-wrapper">
+                <h3>Original Image</h3>
+                <canvas id="originalCanvas"></canvas>
+            </div>
+            <div class="canvas-wrapper">
+                <h3>Transformed Image</h3>
+                <canvas id="transformedCanvas"></canvas>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="transformBtn">Transform Image</button>
+            <button id="resetBtn">Reset Points</button>
+        </div>
+    </div>
+
+    <script src="number8.js"></script>
+</body>
+</html>
