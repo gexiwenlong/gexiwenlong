@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spline Interpolator</title>
+    <link rel="stylesheet" href="new number5.css">
+</head>
+<body>
+    <h1>Broken Line to Spline Interpolator</h1>
+    
+    <div class="controls">
+        <button id="toggle-interpolation">Toggle Spline Interpolation</button>
+        <button id="clear-canvas">Clear Canvas</button>
+        <button id="advanced-mode">Advanced Mode</button>
+    </div>
+    
+    <div id="canvas-container">
+        <canvas id="drawing-canvas" width="800" height="500"></canvas>
+        <div class="point-info">Points: <span id="point-count">0</span></div>
+    </div>
+    
+    <div id="convexity-controls">
+        <h3>Convexity Adjustment</h3>
+        <p>Select a point to adjust convexity:</p >
+        <div id="point-selector"></div>
+        <div>
+            <label for="convexity-slider">Convexity: </label>
+            <input type="range" id="convexity-slider" min="-1" max="1" step="0.1" value="0">
+            <span id="convexity-value">0</span>
+        </div>
+    </div>
+    
+    <script src="new number5.js"></script>
+</body>
+</html>

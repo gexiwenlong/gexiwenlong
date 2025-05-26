@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D多面体查看器</title>
+    <link rel="stylesheet" href="new number9.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>3D多面体查看器</h1>
+        
+        <div class="controls">
+            <div class="shape-control">
+                <label for="shape-type">多面体类型：</label>
+                <select id="shape-type">
+                    <option value="4">四面体 (D4)</option>
+                    <option value="6" selected>立方体 (D6)</option>
+                    <option value="8">八面体 (D8)</option>
+                    <option value="12">十二面体 (D12)</option>
+                    <option value="20">二十面体 (D20)</option>
+                </select>
+            </div>
+            
+            <div class="rotation-controls">
+                <h3>旋转控制</h3>
+                <div class="rotation-group">
+                    <label for="x-rotation">X轴旋转</label>
+                    <input type="range" id="x-rotation" min="0" max="360" value="30">
+                    <span id="x-rotation-value">30°</span>
+                </div>
+                <div class="rotation-group">
+                    <label for="y-rotation">Y轴旋转</label>
+                    <input type="range" id="y-rotation" min="0" max="360" value="45">
+                    <span id="y-rotation-value">45°</span>
+                </div>
+                <div class="rotation-group">
+                    <label for="z-rotation">Z轴旋转</label>
+                    <input type="range" id="z-rotation" min="0" max="360" value="0">
+                    <span id="z-rotation-value">0°</span>
+                </div>
+            </div>
+            
+            <div class="appearance-controls">
+                <h3>外观设置</h3>
+                <div class="appearance-group">
+                    <label for="edge-color">边线颜色</label>
+                    <input type="color" id="edge-color" value="#000000">
+                </div>
+                <div class="appearance-group">
+                    <label for="face-color">面颜色</label>
+                    <input type="color" id="face-color" value="#ffffff">
+                </div>
+                <div class="appearance-group">
+                    <label for="show-numbers">显示数字</label>
+                    <input type="checkbox" id="show-numbers" checked>
+                </div>
+            </div>
+        </div>
+        
+        <div class="canvas-container">
+            <canvas id="cube-canvas"></canvas>
+        </div>
+    </div>
+
+    <script src="new number9.js"></script>
+</body>
+</html>

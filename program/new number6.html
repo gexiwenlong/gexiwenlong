@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Retouching Tool</title>
+    <link rel="stylesheet" href="new number6.css">
+</head>
+<body>
+    <div class="retouching-tool">
+        <h1>Image Retouching Tool</h1>
+        
+        <div class="tool-controls">
+            <input type="file" id="image-upload" accept="image/*">
+            <button id="retouch-mode-btn">Enable Retouch Mode</button>
+            <button id="apply-retouch-btn" disabled>Apply Retouch</button>
+            <button id="reset-btn">Reset</button>
+            
+            <div class="brush-settings">
+                <label for="brush-size">Brush Size:</label>
+                <input type="range" id="brush-size" min="5" max="100" value="20">
+                
+                <label for="brush-opacity">Opacity:</label>
+                <input type="range" id="brush-opacity" min="10" max="100" value="50">
+            </div>
+        </div>
+        
+        <div class="image-container">
+            <canvas id="original-canvas"></canvas>
+            <canvas id="retouch-canvas"></canvas>
+            <div id="selection-overlay"></div>
+        </div>
+        
+        <div class="result-container">
+            <h2>Retouched Result</h2>
+            <canvas id="result-canvas"></canvas>
+            <button id="download-btn" disabled>Download Result</button>
+        </div>
+    </div>
+    
+    <script src="new number6.js"></script>
+</body>
+</html>

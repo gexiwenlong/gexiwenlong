@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图像分割工具</title>
+    <link rel="stylesheet" href="new number4.css">
+    <script async src="https://docs.opencv.org/4.5.5/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+</head>
+<body>
+    <div class="app-container">
+        <h1>图像分割工具</h1>
+        
+        <div class="upload-section">
+            <input type="file" id="image-upload" accept="image/*">
+            <label for="image-upload" class="upload-btn">选择图片</label>
+            <div class="loading" id="opencv-loading">正在加载OpenCV库，请稍候...</div>
+        </div>
+        
+        <div class="mode-selection">
+            <h3>分割模式：</h3>
+            <div class="mode-options">
+                <button class="mode-btn active" data-mode="geometric">几何形状检测</button>
+                <button class="mode-btn" data-mode="contour">轮廓分割</button>
+                <button class="mode-btn" data-mode="foreground">前景提取</button>
+            </div>
+        </div>
+        
+        <div class="editor-container">
+            <div class="image-preview">
+                <div class="image-box">
+                    <h3>原始图片</h3>
+                    <canvas id="original-canvas"></canvas>
+                </div>
+                <div class="image-box">
+                    <h3>分割结果</h3>
+                    <canvas id="segmented-canvas"></canvas>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <div id="geometric-controls" class="control-panel active">
+                    <h3>几何形状检测设置</h3>
+                    <div class="control-group">
+                        <label for="threshold">检测阈值</label>
+                        <input type="range" id="threshold" min="1" max="255" value="100">
+                        <span id="threshold-value">100</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="min-area">最小面积</label>
+                        <input type="range" id="min-area" min="10" max="1000" value="100">
+                        <span id="min-area-value">100</span>
+                    </div>
+                </div>
+                
+                <div id="contour-controls" class="control-panel">
+                    <h3>轮廓分割设置</h3>
+                    <div class="control-group">
+                        <label for="contour-threshold">边缘阈值</label>
+                        <input type="range" id="contour-threshold" min="1" max="255" value="50">
+                        <span id="contour-threshold-value">50</span>
+                    </div>
+                </div>
+                
+                <div id="foreground-controls" class="control-panel">
+                    <h3>前景提取设置</h3>
+                    <div class="control-group">
+                        <label for="iterations">迭代次数</label>
+                        <input type="range" id="iterations" min="1" max="20" value="5">
+                        <span id="iterations-value">5</span>
+                    </div>
+                </div>
+                
+                <button id="process-btn" class="process-button">执行分割</button>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button id="download-btn" class="primary-btn">下载分割结果</button>
+            <button id="reset-btn">重置</button>
+        </div>
+    </div>
+
+    <script src="new number4.js"></script>
+</body>
+</html>

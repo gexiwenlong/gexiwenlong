@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Scaling Tool</title>
+    <link rel="stylesheet" href="new number3.css">
+</head>
+<body>
+    <h1>Image Scaling Tool</h1>
+    
+    <div class="container">
+        <div class="controls">
+            <input type="file" id="image-upload" accept="image/*">
+            
+            <div class="scale-controls">
+                <div>
+                    <label for="scale-percent">Scale Percentage:</label>
+                    <input type="number" id="scale-percent" min="1" max="1000" value="100">
+                    <span>%</span>
+                </div>
+                <div>
+                    <input type="checkbox" id="anti-alias" checked>
+                    <label for="anti-alias">High Quality (Anti-Aliasing)</label>
+                </div>
+                <button id="apply-scale">Apply Scaling</button>
+            </div>
+            
+            <div class="presets">
+                <button class="preset-btn" data-scale="50">50%</button>
+                <button class="preset-btn" data-scale="100">100%</button>
+                <button class="preset-btn" data-scale="200">200%</button>
+                <button class="preset-btn" data-scale="400">400%</button>
+            </div>
+        </div>
+        
+        <div class="image-container">
+            <div class="image-box">
+                <h3>Original Image <span id="original-dimensions"></span></h3>
+                <canvas id="original-canvas"></canvas>
+            </div>
+            <div class="image-box">
+                <h3>Scaled Image <span id="scaled-dimensions"></span></h3>
+                <canvas id="scaled-canvas"></canvas>
+            </div>
+        </div>
+        
+        <button id="download-btn">Download Scaled Image</button>
+    </div>
+    
+    <script src="new number3.js"></script>
+</body>
+</html>
