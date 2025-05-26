@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.original-image, .transformed-image {
+  width: 48%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: white;
+}
+
+canvas {
+  max-width: 100%;
+  border: 1px solid #ddd;
+  cursor: crosshair;
+}
+
+.controls {
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
